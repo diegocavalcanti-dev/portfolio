@@ -48,5 +48,29 @@ export const projects: Project[] = [
         liveUrl: 'https://projeto-cardapio-one.vercel.app/',
         gitUrl: 'https://github.com/diegocavalcanti-dev/dev-burguer',
         technologies: ['HTML', 'JavaScript', 'Tailwind CSS']
-    }
+    },
+    {
+        title: 'Calculadora Aritmética',
+        description: 'Aplicação de calculadora aritmética desenvolvida com Vue.js e Bootstrap, utilizando Vite como bundler.',
+        imageUrl: 'https://raw.githubusercontent.com/diegocavalcanti-dev/portfolio-images/main/calculadora-vue.png',
+        liveUrl: 'https://calculadora-vue-25.vercel.app/',
+        gitUrl: 'https://github.com/diegocavalcanti-dev/calculadora-vue-25',
+        technologies: ['Vue.js', 'Bootstrap', 'Vite']
+    },
+    {
+        title: 'Restaurante Site',
+        description: 'Site elegante e responsivo para restaurantes, com funcionalidades interativas utilizando Bootstrap 5.',
+        imageUrl: 'https://raw.githubusercontent.com/diegocavalcanti-dev/portfolio-images/main/resturant-project-bootstrap.png',
+        liveUrl: 'https://resturant-project-bootstrap.vercel.app/',
+        gitUrl: 'https://github.com/diegocavalcanti-dev/resturant_project-bootstrap/',
+        technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript']
+    },
+    {
+        title: 'Prime Watches',
+        description: 'Loja online de relógios de luxo com design moderno e responsivo. Inclui marcas renomadas como Rolex, Omega e TAG Heuer.',
+        imageUrl: 'https://raw.githubusercontent.com/diegocavalcanti-dev/portfolio-images/main/prime-watches.png',
+        liveUrl: 'https://prime-watches.vercel.app/',
+        gitUrl: 'https://github.com/diegocavalcanti-dev/prime-watches-ebac/',
+        technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript']
+    }    
 ];
