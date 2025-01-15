@@ -25,7 +25,7 @@ export default function Header() {
                             <Linkedin className="w-6 h-6" />
                         </a>
                         <a
-                            href="mailto:cavalcatidiego@hotmail.com"
+                            href="mailto:cavalcantidiego@hotmail.com"
                             className="text-gray-600 hover:text-gray-900 transition-colors"
                         >
                             <Mail className="w-6 h-6" />
