@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         href={project.gitUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-gray-600 hover:text-gray-800"
+                        className="inline-flex items-center text-green-600 hover:text-green-800"
                     >
                         <Github className="w-4 h-4 mr-1" /> Code
                     </a>
