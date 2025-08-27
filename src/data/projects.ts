@@ -2,6 +2,14 @@ import { Project } from '../types/Project';
 
 export const projects: Project[] = [
     {
+        title: 'Pronto & Leve',
+        description: 'Plataforma de delivery focada em alimentação saudável, com autenticação de usuários, gestão de categorias e produtos, filtros por restrições alimentares e fluxo de pedidos.',
+        imageUrl: 'https://raw.githubusercontent.com/diegocavalcanti-dev/portfolio-images/main/pronto-eleve.png',
+        liveUrl: 'https://prontoeleve.netlify.app/',
+        gitUrl: 'https://github.com/Grupo-02-Turma-JavaScript-07/sistema-delivery-front',
+        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'JWT', 'TypeORM', 'PostgreSQL', 'Jest', 'Axios']
+    },
+    {
         title: 'Clone do Twitter',
         description: 'Aplicação inspirada no Twitter com React e TypeScript no front-end, Django no back-end e integração com PostgreSQL.',
         imageUrl: 'https://raw.githubusercontent.com/diegocavalcanti-dev/portfolio-images/main/twitter-clone.png',

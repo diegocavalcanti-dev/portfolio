@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -11,7 +10,7 @@ export default function Footer() {
                         © {new Date().getFullYear()} Diego Cavalcanti - Todos os direitos reservados.
                     </p>
                     
-                    {/* Links de redes sociais (opcionais) */}
+                    {/* Links das redes sociais */}
                     <nav className="flex items-center gap-6">
                         <a
                             href="https://github.com/diegocavalcanti-dev"
