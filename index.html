@@ -1,13 +1,23 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="pt-BR">
+  <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diego's Portfolio</title>
-</head>
-<body>
+
+    <!-- Google tag (Analytics) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V7XW0HRQT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3V7XW0HRQT');
+    </script>
+  </head>
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-</body>
+  </body>
 </html>
