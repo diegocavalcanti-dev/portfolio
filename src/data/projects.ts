@@ -2,6 +2,14 @@ import { Project } from '../types/Project';
 
 export const projects: Project[] = [
     {
+        title: 'Cenas de Combate',
+        description: 'Portal de história militar e geopolítica com sistema de artigos, categorias, área administrativa, SEO otimizado, sitemap e integração com API para publicação de conteúdo em larga escala.',
+        imageUrl: 'https://raw.githubusercontent.com/diegocavalcanti-dev/portfolio-images/main/cenas-de-combate.png',
+        liveUrl: 'https://www.cenasdecombate.com/',
+        gitUrl: 'https://github.com/diegocavalcanti-dev/',
+        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'tRPC', 'Drizzle ORM', 'MySQL', 'SEO']
+    },
+    {
         title: 'Pronto & Leve',
         description: 'Plataforma de delivery focada em alimentação saudável, com autenticação de usuários, gestão de categorias e produtos, filtros por restrições alimentares e fluxo de pedidos.',
         imageUrl: 'https://raw.githubusercontent.com/diegocavalcanti-dev/portfolio-images/main/pronto-eleve.png',
