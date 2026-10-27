@@ -1,82 +1,71 @@
-import { ExternalLink, Github, Globe2 } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
 import { Project } from '../types/Project';
+import ImageWithFallback from './ImageWithFallback';
 
 interface ProjectCardProps {
     project: Project;
+    index: number;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, index }: ProjectCardProps) {
     return (
-        <article className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-900/10">
-            <div className="relative h-64 overflow-hidden bg-gray-100">
-                <iframe
-                    src={project.liveUrl}
-                    title={project.title}
-                    className="h-full w-full border-none transition-transform duration-500 group-hover:scale-[1.03]"
-                    sandbox="allow-scripts allow-same-origin"
-                    loading="lazy"
+        <article className="group relative flex flex-col overflow-hidden rounded-xl border border-white/5 bg-zinc-900/40 transition hover:border-white/15 hover:bg-zinc-900/70">
+            <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block aspect-[16/10] overflow-hidden bg-zinc-900"
+                aria-label={`Abrir ${project.title}`}
+            >
+                <ImageWithFallback
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
                 />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/0 to-zinc-950/0" />
+                <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-zinc-950/70 text-zinc-200 backdrop-blur-md transition group-hover:bg-amber-400 group-hover:text-zinc-950">
+                    <ArrowUpRight className="h-4 w-4" />
+                </div>
+            </a>
 
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-2 text-xs font-bold text-gray-800 shadow-lg backdrop-blur-md">
-                        <Globe2 className="h-4 w-4" />
-                        Preview
+            <div className="flex flex-1 flex-col p-5">
+                <div className="flex items-center justify-between gap-3">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                        {String(index + 1).padStart(2, '0')}
                     </span>
-
-                    <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full bg-gray-950 px-3 py-2 text-xs font-bold text-white shadow-lg transition-all hover:bg-gray-800"
-                    >
-                        Abrir
-                        <ExternalLink className="h-4 w-4" />
-                    </a>
-                </div>
-            </div>
-
-            <div className="p-6">
-                <h3 className="text-xl font-black tracking-tight text-gray-950">
-                    {project.title}
-                </h3>
-
-                <p className="mt-3 line-clamp-4 text-sm leading-6 text-gray-600">
-                    {project.description}
-                </p>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                        <span
-                            key={tech}
-                            className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-bold text-gray-700"
-                        >
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                    <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gray-950 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-gray-900/10 transition-all hover:-translate-y-0.5 hover:bg-gray-800"
-                    >
-                        Ver projeto
-                        <ExternalLink className="h-4 w-4" />
-                    </a>
-
                     <a
                         href={project.gitUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-gray-200 bg-white px-5 py-3 text-sm font-bold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md"
+                        aria-label="Repositório"
+                        className="text-zinc-500 transition hover:text-zinc-200"
                     >
                         <Github className="h-4 w-4" />
-                        Código
                     </a>
+                </div>
+
+                <h3 className="mt-3 text-lg font-semibold tracking-tight text-zinc-50">
+                    {project.title}
+                </h3>
+
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-zinc-400">
+                    {project.description}
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-1.5">
+                    {project.technologies.slice(0, 5).map((tech) => (
+                        <span
+                            key={tech}
+                            className="rounded border border-white/5 bg-white/[0.03] px-2 py-0.5 text-[11px] text-zinc-400"
+                        >
+                            {tech}
+                        </span>
+                    ))}
+                    {project.technologies.length > 5 && (
+                        <span className="rounded border border-white/5 bg-white/[0.03] px-2 py-0.5 text-[11px] text-zinc-500">
+                            +{project.technologies.length - 5}
+                        </span>
+                    )}
                 </div>
             </div>
         </article>
