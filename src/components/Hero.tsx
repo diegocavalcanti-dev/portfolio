@@ -9,6 +9,17 @@ export default function Hero() {
 
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
+                    <div className="mx-auto mb-8 h-36 w-36 sm:h-40 sm:w-40">
+                        <div className="relative h-full w-full">
+                            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-cyan-400 opacity-70 blur-md" />
+                            <img
+                                src="/diego.jpg"
+                                alt="Diego Cavalcanti"
+                                className="relative h-full w-full rounded-full border-4 border-white object-cover shadow-xl"
+                            />
+                        </div>
+                    </div>
+
                     <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm">
                         <span className="h-2 w-2 rounded-full bg-green-500" />
                         Disponível para novos projetos
