@@ -12,8 +12,8 @@ export default function ImageWithFallback({ src, alt, className = '' }: ImageWit
 
     if (error) {
         return (
-            <div className={`flex items-center justify-center bg-gray-100 ${className}`}>
-                <Image className="w-12 h-12 text-gray-400" />
+            <div className={`flex items-center justify-center bg-zinc-900 ${className}`}>
+                <Image className="w-10 h-10 text-zinc-700" />
                 <span className="sr-only">{alt}</span>
             </div>
         );

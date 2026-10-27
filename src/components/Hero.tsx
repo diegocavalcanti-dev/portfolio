@@ -1,118 +1,111 @@
-import { Code2, Database, Layout, ArrowRight, Github, Linkedin } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+
+const stack = [
+    'React', 'TypeScript', 'Node', 'Python', 'Django', 'PostgreSQL', 'Tailwind', 'Vite',
+];
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white pt-32 pb-20">
-            <div className="absolute left-1/2 top-0 -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-blue-100/70 blur-3xl" />
-            <div className="absolute right-0 top-40 -z-10 h-72 w-72 rounded-full bg-purple-100/70 blur-3xl" />
-            <div className="absolute left-0 bottom-10 -z-10 h-72 w-72 rounded-full bg-cyan-100/70 blur-3xl" />
+        <section className="relative pt-36 pb-24">
+            <div className="mx-auto max-w-6xl px-5 lg:px-8">
+                <div className="grid items-center gap-14 md:grid-cols-[1fr_280px] md:gap-20">
+                    <div>
+                        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
+                            <span className="relative flex h-1.5 w-1.5">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                            </span>
+                            Disponível para novos projetos
+                        </div>
 
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-4xl text-center">
-                    <div className="mx-auto mb-8 h-36 w-36 sm:h-40 sm:w-40">
-                        <div className="relative h-full w-full">
-                            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-cyan-400 opacity-70 blur-md" />
-                            <img
-                                src="/diego.jpg"
-                                alt="Diego Cavalcanti"
-                                className="relative h-full w-full rounded-full border-4 border-white object-cover shadow-xl"
-                            />
+                        <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight text-zinc-50 sm:text-6xl md:text-7xl">
+                            Diego<br />
+                            <span className="text-zinc-500">Cavalcanti.</span>
+                        </h1>
+
+                        <p className="mt-6 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">
+                            Desenvolvedor full stack. Construo produtos web rápidos e bem estruturados
+                            com <span className="text-zinc-200">React</span>,{' '}
+                            <span className="text-zinc-200">TypeScript</span>,{' '}
+                            <span className="text-zinc-200">Python</span> e{' '}
+                            <span className="text-zinc-200">Django</span>.
+                        </p>
+
+                        <div className="mt-4 flex items-center gap-2 text-sm text-zinc-500">
+                            <MapPin className="h-3.5 w-3.5" />
+                            Brasil · trabalho remoto
+                        </div>
+
+                        <div id="contact" className="mt-10 flex flex-wrap items-center gap-3">
+                            <a
+                                href="#projects"
+                                className="group inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-amber-300"
+                            >
+                                Ver projetos
+                                <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            </a>
+
+                            <a
+                                href="mailto:cavalcantidiego@hotmail.com"
+                                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-zinc-200 transition hover:border-white/20 hover:bg-white/10"
+                            >
+                                <Mail className="h-4 w-4" />
+                                cavalcantidiego@hotmail.com
+                            </a>
+
+                            <div className="flex items-center gap-1">
+                                <a
+                                    href="https://github.com/diegocavalcanti-dev"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub"
+                                    className="rounded-full border border-white/10 bg-white/5 p-3 text-zinc-300 transition hover:border-white/20 hover:bg-white/10 hover:text-white"
+                                >
+                                    <Github className="h-4 w-4" />
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/diegoscavalcanti/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                    className="rounded-full border border-white/10 bg-white/5 p-3 text-zinc-300 transition hover:border-white/20 hover:bg-white/10 hover:text-white"
+                                >
+                                    <Linkedin className="h-4 w-4" />
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm">
-                        <span className="h-2 w-2 rounded-full bg-green-500" />
-                        Disponível para novos projetos
-                    </div>
-
-                    <h1 className="text-4xl font-black tracking-tight text-gray-950 sm:text-5xl md:text-7xl">
-                        Desenvolvedor{' '}
-                        <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
-                            Full Stack
-                        </span>
-                    </h1>
-
-                    <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-gray-600 sm:text-lg md:text-xl">
-                        Sou Diego Cavalcanti, desenvolvedor focado em criar aplicações web modernas,
-                        rápidas e bem estruturadas. Trabalho com React, TypeScript, Python, Django,
-                        APIs, bancos de dados e interfaces responsivas.
-                    </p>
-
-                    <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                        <a
-                            href="#projects"
-                            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gray-950 px-7 py-3.5 text-sm font-bold text-white shadow-xl shadow-gray-900/20 transition-all hover:-translate-y-0.5 hover:bg-gray-800 sm:w-auto"
-                        >
-                            Ver projetos
-                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </a>
-
-                        <a
-                            href="mailto:cavalcantidiego@hotmail.com"
-                            className="inline-flex w-full items-center justify-center rounded-full border border-gray-200 bg-white px-7 py-3.5 text-sm font-bold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md sm:w-auto"
-                        >
-                            Entrar em contato
-                        </a>
-                    </div>
-
-                    <div className="mt-7 flex items-center justify-center gap-3">
-                        <a
-                            href="https://github.com/diegocavalcanti-dev"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="GitHub"
-                            className="rounded-full border border-gray-200 bg-white p-3 text-gray-600 shadow-sm transition-all hover:-translate-y-0.5 hover:text-gray-950 hover:shadow-md"
-                        >
-                            <Github className="h-5 w-5" />
-                        </a>
-
-                        <a
-                            href="https://www.linkedin.com/in/diegoscavalcanti/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                            className="rounded-full border border-gray-200 bg-white p-3 text-gray-600 shadow-sm transition-all hover:-translate-y-0.5 hover:text-gray-950 hover:shadow-md"
-                        >
-                            <Linkedin className="h-5 w-5" />
-                        </a>
+                    <div className="order-first md:order-last">
+                        <div className="relative mx-auto w-56 md:w-full">
+                            <div className="absolute -inset-2 rounded-full bg-amber-400/10 blur-2xl" />
+                            <div className="relative aspect-square overflow-hidden rounded-full border border-white/10 bg-zinc-900">
+                                <img
+                                    src="/diego.jpg"
+                                    alt="Diego Cavalcanti"
+                                    className="h-full w-full object-cover grayscale transition duration-500 hover:grayscale-0"
+                                />
+                            </div>
+                            <div className="absolute -bottom-2 -right-2 rounded-full border border-white/10 bg-zinc-900 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-amber-400">
+                                v2026
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div className="mx-auto mt-16 grid max-w-5xl gap-5 sm:grid-cols-3">
-                    <div className="group rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
-                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-transform group-hover:scale-110">
-                            <Layout className="h-7 w-7" />
-                        </div>
-                        <h3 className="mt-5 text-lg font-bold text-gray-950">
-                            Frontend
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-gray-500">
-                            Interfaces modernas, responsivas e otimizadas com React, TypeScript e Tailwind CSS.
-                        </p>
-                    </div>
-
-                    <div className="group rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
-                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-green-50 text-green-600 transition-transform group-hover:scale-110">
-                            <Database className="h-7 w-7" />
-                        </div>
-                        <h3 className="mt-5 text-lg font-bold text-gray-950">
-                            Backend
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-gray-500">
-                            APIs, autenticação, banco de dados, integrações e regras de negócio bem organizadas.
-                        </p>
-                    </div>
-
-                    <div className="group rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
-                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-50 text-purple-600 transition-transform group-hover:scale-110">
-                            <Code2 className="h-7 w-7" />
-                        </div>
-                        <h3 className="mt-5 text-lg font-bold text-gray-950">
-                            Código limpo
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-gray-500">
-                            Estrutura clara, componentes reutilizáveis e foco em performance, manutenção e escalabilidade.
-                        </p>
+                <div id="stack" className="mt-20 border-t border-white/5 pt-8">
+                    <p className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                        Stack principal
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                        {stack.map((item) => (
+                            <span
+                                key={item}
+                                className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-zinc-300"
+                            >
+                                {item}
+                            </span>
+                        ))}
                     </div>
                 </div>
             </div>

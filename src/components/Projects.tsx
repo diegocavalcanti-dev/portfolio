@@ -3,29 +3,25 @@ import ProjectCard from './ProjectCard';
 
 export default function Projects() {
     return (
-        <section id="projects" className="relative overflow-hidden bg-gray-50 py-24">
-            <div className="absolute left-0 top-20 -z-10 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl" />
-            <div className="absolute right-0 bottom-20 -z-10 h-72 w-72 rounded-full bg-purple-100/70 blur-3xl" />
-
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto mb-14 max-w-3xl text-center">
-                    <span className="inline-flex rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 shadow-sm">
-                        Portfólio
-                    </span>
-
-                    <h2 className="mt-5 text-3xl font-black tracking-tight text-gray-950 sm:text-4xl md:text-5xl">
-                        Projetos em destaque
-                    </h2>
-
-                    <p className="mt-5 text-base leading-7 text-gray-600 sm:text-lg">
-                        Alguns projetos desenvolvidos com foco em performance, design responsivo,
-                        boas práticas de código e soluções reais para web.
+        <section id="projects" className="relative py-24">
+            <div className="mx-auto max-w-6xl px-5 lg:px-8">
+                <div className="flex items-end justify-between gap-6 border-b border-white/5 pb-8">
+                    <div>
+                        <p className="font-mono text-xs uppercase tracking-widest text-amber-400">
+                            / 01 — Projetos
+                        </p>
+                        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl">
+                            Selecionados
+                        </h2>
+                    </div>
+                    <p className="hidden max-w-sm text-sm text-zinc-500 sm:block">
+                        {projects.length} projetos entre produtos próprios, trabalhos de bootcamp e estudos.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project) => (
-                        <ProjectCard key={project.title} project={project} />
+                <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {projects.map((project, i) => (
+                        <ProjectCard key={project.title} project={project} index={i} />
                     ))}
                 </div>
             </div>
