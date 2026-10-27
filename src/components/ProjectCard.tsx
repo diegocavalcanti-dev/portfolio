@@ -18,7 +18,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 aria-label={`Abrir ${project.title}`}
             >
                 <ImageWithFallback
-                    src={project.imageUrl}
+                    src={`https://image.thum.io/get/width/900/crop/563/noanimate/${project.liveUrl}`}
+                    fallbackSrc={project.imageUrl}
                     alt={project.title}
                     className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
                 />

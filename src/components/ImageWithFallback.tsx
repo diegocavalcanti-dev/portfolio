@@ -3,14 +3,17 @@ import { Image } from 'lucide-react';
 
 interface ImageWithFallbackProps {
     src: string;
+    fallbackSrc?: string;
     alt: string;
     className?: string;
 }
 
-export default function ImageWithFallback({ src, alt, className = '' }: ImageWithFallbackProps) {
-    const [error, setError] = useState(false);
+export default function ImageWithFallback({ src, fallbackSrc, alt, className = '' }: ImageWithFallbackProps) {
+    const [currentSrc, setCurrentSrc] = useState(src);
+    const [triedFallback, setTriedFallback] = useState(false);
+    const [failed, setFailed] = useState(false);
 
-    if (error) {
+    if (failed) {
         return (
             <div className={`flex items-center justify-center bg-zinc-900 ${className}`}>
                 <Image className="w-10 h-10 text-zinc-700" />
@@ -21,11 +24,18 @@ export default function ImageWithFallback({ src, alt, className = '' }: ImageWit
 
     return (
         <img
-            src={src}
+            src={currentSrc}
             alt={alt}
             className={className}
-            onError={() => setError(true)}
             loading="lazy"
+            onError={() => {
+                if (fallbackSrc && !triedFallback) {
+                    setTriedFallback(true);
+                    setCurrentSrc(fallbackSrc);
+                } else {
+                    setFailed(true);
+                }
+            }}
         />
     );
 }

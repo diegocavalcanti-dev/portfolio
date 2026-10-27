@@ -83,7 +83,7 @@ export default function Hero() {
                                 <img
                                     src="/diego.jpg"
                                     alt="Diego Cavalcanti"
-                                    className="h-full w-full object-cover grayscale transition duration-500 hover:grayscale-0"
+                                    className="h-full w-full object-cover transition duration-500 hover:scale-105"
                                 />
                             </div>
                             <div className="absolute -bottom-2 -right-2 rounded-full border border-white/10 bg-zinc-900 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-amber-400">
